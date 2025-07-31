@@ -9,6 +9,12 @@ description = "EtherView unveils the unseen dimensions, transforming point cloud
 authors = [
     { name = "ZhangzrJerry", email = "zhangzrjerry@outlook.com" }
 ]
+dependencies = [
+    "numpy",
+    "trimesh",
+    "open3d",
+    "pyvista"
+]
 requires-python = ">=3.6"
 
 [tool.setuptools.packages.find]
