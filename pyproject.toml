@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "etherview"
+version = "0.0.0"
+description = "EtherView unveils the unseen dimensions, transforming point clouds and meshes into luminous digital visions."
+authors = [
+    { name = "ZhangzrJerry", email = "zhangzrjerry@outlook.com" }
+]
+requires-python = ">=3.6"
+
+[tool.setuptools.packages.find]
+where = ["."]
