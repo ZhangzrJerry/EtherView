@@ -9,7 +9,7 @@ Lightweight helpers to plot point clouds, triangle meshes and simple pose axes u
 Install directly from GitHub:
 
 ```powershell
-pip install git+ssh://git@github.com/ZhangzrJerry/EtherView.git
+pip install git+https://github.com/ZhangzrJerry/EtherView.git
 ```
 
 If you run into issues with the optional dependencies, install them explicitly:
