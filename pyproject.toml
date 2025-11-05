@@ -13,7 +13,8 @@ dependencies = [
     "numpy",
     "trimesh",
     "open3d",
-    "pyvista"
+    "pyvista",
+    "scipy"
 ]
 requires-python = ">=3.6"
 
