@@ -1,21 +1,23 @@
 import pyvista as pv
-from .type import PointCloud, Trimesh, Poses
+from .type import PointCloud, Trimesh, Poses, Line
 
 
 def plot(
     meshes: list[Trimesh] = [],
     pcds: list[PointCloud] = [],
     poses: list[Poses] = [],
+    lines: list[Line] = [],
     window_size: tuple = (2000, 2000),
     save_path: str = None,  # type: ignore
 ) -> None:
     """
-    Plot meshes, point clouds, and poses using PyVista.
+    Plot meshes, point clouds, poses and lines using PyVista.
 
     Args:
         meshes (list[Trimesh]): List of Trimesh objects.
         pcds (list[PointCloud]): List of PointCloud objects.
         poses (list[Poses]): List of Poses objects.
+        lines (list[Line]): List of Line objects.
         window_size (tuple): Size of the plotting window (width, height).
     """
     plotter = pv.Plotter(window_size=window_size, off_screen=True)
@@ -56,6 +58,17 @@ def plot(
                 name=n,
                 show_scalar_bar=False,
                 render=False,
+            )
+
+    for line in lines:
+        if len(line.points) > 1:
+            pv_line = pv.lines_from_points(line.points)
+            plotter.add_mesh(
+                pv_line,
+                color=line.color,
+                line_width=line.line_width,
+                render=False,
+                show_scalar_bar=False,
             )
 
     plotter.render()
