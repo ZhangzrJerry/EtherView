@@ -8,10 +8,21 @@ from scipy.spatial.transform import Rotation as R
 
 
 @dataclass
+class Line:
+    points: np.ndarray
+    color: str = "black"
+    line_width: float = 2.0
+
+    @classmethod
+    def from_points(cls, points: np.ndarray, color: str = "black", line_width: float = 2.0) -> "Line":
+        return cls(points=points, color=color, line_width=line_width)
+
+
+@dataclass
 class PointCloud:
     points: np.ndarray
     colors: str = "#26D701"
-    point_size: float = 3.0
+    point_size: float = 2.0
 
     @classmethod
     def from_pointcloud(cls, pcd: o3d.geometry.PointCloud) -> "PointCloud":
